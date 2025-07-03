@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🧾 Aplikasi Admin Manajemen Barang Hilang
 
-## Getting Started
+Aplikasi berbasis web untuk membantu proses pelaporan, pencocokan, dan pengelolaan barang hilang dan ditemukan di lingkungan tertentu, seperti kampus, perumahan, atau instansi publik.
 
-First, run the development server:
+## 🔧 Fitur Utama
+
+### 👥 Manajemen Pengguna
+
+- Role pengguna: **Admin**, **Satpam**, dan **Tamu**
+- Admin dapat menambah, mengedit, dan menghapus pengguna
+- Upload foto identitas untuk setiap pengguna
+
+### 📝 Laporan Barang
+
+- Pelaporan barang **hilang** dan **temuan**
+- Upload foto barang
+- Status laporan: _proses_, _cocok_, _selesai_
+
+### 🔍 Pencocokan Barang
+
+- Sistem pencocokan antara laporan hilang dan temuan
+- Menampilkan _skor kecocokan_ antara dua laporan
+
+### 📦 Klaim Barang
+
+- Proses klaim oleh pihak terkait
+- Upload foto bukti klaim
+- Status klaim: _selesai_
+
+### 📊 Dashboard Admin
+
+- Statistik jumlah pengguna per role
+- Jumlah laporan hilang & temuan
+- Jumlah pencocokan & klaim
+
+## 🖥️ Teknologi
+
+- **Next.js (App Router)**
+- **TypeScript**
+- **TailwindCSS**
+- **Axios**
+- **Headless UI**
+- **Express.js** (untuk backend)
+- **Firebase / Google Cloud Storage** (opsional untuk gambar)
+
+## 📁 Struktur Folder
+
+├── components/
+├── pages/
+│ ├── dashboard/
+│ ├── user/
+│ ├── laporan/
+│ └── klaim/
+├── lib/
+│ └── api.ts
+├── public/
+├── .env.local
+├── README.md
+
+## 📦 Instalasi
 
 ```bash
+# Clone repo
+git clone https://github.com/username/nama-repo.git
+cd nama-repo
+
+# Install dependencies
+npm install
+
+# Jalankan development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+🔐 Konfigurasi Environment
+Buat file .env.local:
+NEXT_PUBLIC_API_URL=https://your-api-url.com
+
+👤 Akses Admin
+Pastikan akun dengan role admin login melalui halaman /login.
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
