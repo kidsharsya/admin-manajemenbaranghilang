@@ -4,8 +4,6 @@ import { useState } from 'react';
 import { Eye, EyeOff, Lock, Mail, User } from 'lucide-react';
 import api from '@/lib/api';
 import { useRouter } from 'next/navigation';
-import { useContext } from 'react';
-import { UserContext } from '@/context/UserContext';
 
 export default function LoginPage() {
   const {
@@ -16,7 +14,6 @@ export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
-  const { refreshUser } = useContext(UserContext);
 
   const onSubmit = async (data: any) => {
     setIsLoading(true);
@@ -31,7 +28,6 @@ export default function LoginPage() {
 
       localStorage.setItem('token', token);
       localStorage.setItem('user', JSON.stringify(user));
-      refreshUser();
 
       router.push('/dashboard'); // arahkan ke halaman admin
     } catch (err: any) {
